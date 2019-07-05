@@ -17,29 +17,27 @@ import java.util.ArrayList;
  *
  * @author Sandra
  */
-public class AlumnoGUI extends javax.swing.JFrame {
+public class DocenteGUI extends javax.swing.JFrame {
     private ArrayList<Persona> registros;
     /**
      * Creates new form AlumnoGUI
      */
-    public AlumnoGUI() {
+    public DocenteGUI() {
         initComponents();
         registros = new ArrayList<Persona>();
-        buttonGroup1.add(jRadioButton1);
-        buttonGroup1.add(jRadioButton2);
         ua.addActionListener(new ActionListener(){
             // CLASE INTERNA ANONIMA QUE GESTIONA A ACTIONLISTENER
             public void actionPerformed(ActionEvent e){
-                pa.removeAllItems();
+                academias.removeAllItems();
                 if(ua.getSelectedIndex()==0){
-                    pa.addItem("Ing. Mecatrónica");
-                    pa.addItem("Ing. en Sistemas Comp.");
-                    pa.addItem("Ing. Ambiental");
-                    pa.addItem("Ing. en Alimentos");
-                    pa.addItem("Ing. Metalúrgica");
+                    academias.addItem("Ing. Mecatrónica");
+                    academias.addItem("Ing. en Sistemas Comp.");
+                    academias.addItem("Ing. Ambiental");
+                    academias.addItem("Ing. en Alimentos");
+                    academias.addItem("Ing. Metalúrgica");
                 }else{
-                    pa.addItem("Laboratorista Químico");
-                    pa.addItem("Sistemas Digitales");
+                    academias.addItem("Laboratorista Químico");
+                    academias.addItem("Sistemas Digitales");
                 }
             }
         }     
@@ -64,7 +62,6 @@ public class AlumnoGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -72,12 +69,9 @@ public class AlumnoGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        pa = new javax.swing.JComboBox<>();
+        academias = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         ua = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -91,21 +85,15 @@ public class AlumnoGUI extends javax.swing.JFrame {
 
         jLabel2.setText("CURP: ");
 
-        jLabel3.setText("No. Boleta: ");
+        jLabel3.setText("No. Empleado: ");
 
-        jLabel4.setText("Programa Académico: ");
+        jLabel4.setText("Academia");
 
-        pa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ing. Mecatrónica", "Ing. en Sistemas Comp.", "Ing. en Alimentos", "Ing. Ambiental", "Ing. Metalúrgica" }));
+        academias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciencias Computacionales", "Ingeniería", "Físico-Matematica" }));
 
         jLabel5.setText("Unidad Académica: ");
 
         ua.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UPIIZ", "CECyT18" }));
-
-        jLabel6.setText("Situación Académica: ");
-
-        jRadioButton1.setText("Regular");
-
-        jRadioButton2.setText("Irregular");
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +129,11 @@ public class AlumnoGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton3)
+                        .addGap(57, 57, 57)
+                        .addComponent(jButton4))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabel3)
@@ -162,28 +155,16 @@ public class AlumnoGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pa, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(academias, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(27, 27, 27)
                             .addComponent(jButton1)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jButton2))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton3)
-                        .addGap(67, 67, 67)
-                        .addComponent(jButton4))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(93, 93, 93))
+                            .addGap(75, 75, 75)
+                            .addComponent(jButton2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,12 +188,7 @@ public class AlumnoGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(pa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(academias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -223,7 +199,7 @@ public class AlumnoGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,26 +209,17 @@ public class AlumnoGUI extends javax.swing.JFrame {
         // TODO add your handling code here
         String n= jTextField1.getText();
         String curp = jTextField2.getText();
-        int boleta = Integer.parseInt( jTextField3.getText());
-        String sit;
-        if (jRadioButton1.isSelected())
-            sit = jRadioButton1.getText();
-        else if(jRadioButton2.isSelected())
-            sit = jRadioButton2.getText();
-        else
-             sit = jRadioButton1.getText();
-        
+        int n_emp = Integer.parseInt( jTextField3.getText());
         String escuela = ua.getSelectedItem().toString();
-        String progr = pa.getSelectedItem().toString();
-        // CREAR UN OBJETO DE TIPO ALUMNO
-        Alumno a = new Alumno(n, curp,boleta);
-        a.cambiarPrograma(progr);
-        a.cambiarSituacionAcademia(sit);
-        a.cambiarUnidadAcademica(escuela);
-        // MOSTRAR DATOS DEL ALUMNO EN EL AREA DE TEXTO
-        jTextArea1.append(a.toString()+"\n");
-        // ALMACENAR ALUMNO EN EL ARRAYLIST
-        registros.add(a);
+        String acad = academias.getSelectedItem().toString();
+        // CREAR UN OBJETO DE TIPO DOCENTE
+        Docente d = new Docente(n, curp,n_emp);
+        d.cambiarUnidadAcademica(escuela);
+        d.cambiarAcademia(acad);
+        // MOSTRAR DATOS DEL DOCENTE EN EL AREA DE TEXTO
+        jTextArea1.append(d.toString()+"\n");
+        // ALMACENAR DOCENTE EN EL ARRAYLIST
+        registros.add(d);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -304,26 +271,27 @@ public class AlumnoGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AlumnoGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocenteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AlumnoGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocenteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AlumnoGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocenteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AlumnoGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocenteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlumnoGUI().setVisible(true);
+                new DocenteGUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> academias;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -333,15 +301,11 @@ public class AlumnoGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JComboBox<String> pa;
     private javax.swing.JComboBox<String> ua;
     // End of variables declaration//GEN-END:variables
 }

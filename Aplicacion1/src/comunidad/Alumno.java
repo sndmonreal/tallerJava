@@ -41,6 +41,16 @@ public class Alumno extends Persona{
      public String devolverSituacionAcademia(){
         return situacion_academica;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+
+                "no_boleta=" + no_boleta + 
+                ", programa=" + programa +
+                ", situacion_academica=" + 
+                situacion_academica;
+    }
+     
      public static void main(String args[]){
          Persona p[] = new Persona[10];
          

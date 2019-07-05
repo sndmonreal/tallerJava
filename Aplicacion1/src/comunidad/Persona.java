@@ -5,6 +5,7 @@
  */
 
 package comunidad;
+import java.io.Serializable;
 import java.util.Calendar;
 /**
  * @author Sandra
@@ -13,7 +14,7 @@ import java.util.Calendar;
  * Descripción: 
  * Tema: 
  */
-public class Persona {
+public abstract class Persona implements Serializable{
     // ATRIBUTOS
     protected String nombre;
     protected String curp;
@@ -66,4 +67,11 @@ public class Persona {
         
         return aa-a;
     }
+
+    @Override
+    public String toString() {
+        return  "nombre=" + nombre + ", curp=" + curp +
+                ", unidad_academica=" + unidad_academica;
+    }
+    
 }
