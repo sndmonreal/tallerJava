@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import javax.swing.DefaultListModel;
 
 /**
  *
@@ -25,9 +24,10 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         File f = new File("datos.txt");
         if(f.exists()){
-            // leer datos
+            // leer datos y cargarlos en el arraylist
              leerArchivo(f);
         }else{
+            // crear el arraylist vacio
             registros= new ArrayList<Persona>();
         }
     }
@@ -104,6 +104,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem4.setText("Ver Registros");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
         jMenu1.add(jSeparator1);
 
@@ -159,6 +164,14 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
         d.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // VER REGISTROS
+        Registros r = new Registros();
+        this.dispose();
+        r.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
