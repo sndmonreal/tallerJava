@@ -37,7 +37,7 @@ public class Principal extends javax.swing.JFrame {
         try{
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
-            ArrayList<Persona> registros = (ArrayList) ois.readObject();
+            registros = (ArrayList) ois.readObject();
            
         }catch(IOException  | ClassNotFoundException ex){
             ex.printStackTrace();
